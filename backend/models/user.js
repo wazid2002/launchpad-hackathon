@@ -11,10 +11,12 @@ const userSchema= new mongoose.Schema({
         required: true,
     },
     totalViews:{
-        type: String
+        type: Number,
+        default:0
     },
     connections:{
-        type: String
+        type: Number,
+        default:0
     }
 });
 
