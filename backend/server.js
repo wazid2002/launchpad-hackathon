@@ -1,7 +1,9 @@
 const express= require("express");
 const connectDB= require("./config/db");
 const dotenv = require("dotenv");
-const sample=require("./routes/testroute")
+const sample=require("./routes/testroute");
+const user=require("./routes/user");
+
 const cors = require("cors")
 
 dotenv.config();
@@ -15,6 +17,7 @@ app.use(cors());
 connectDB();
 
 app.use("/api",sample);
+app.use("/api",user);
 
 
 

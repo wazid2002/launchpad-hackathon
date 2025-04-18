@@ -2,26 +2,20 @@ const mongoose = require("mongoose");
 
 const userSchema= new mongoose.Schema({
     userId:{
-        type:"string",
+        type: String,
         required:true,
         unique:true
     },
-    role: { type: String, enum: ['user', 'mentor', 'admin'], default: 'user' },
+    name: {
+        type: String,
+        required: true,
+    },
     totalViews:{
-        type:"string"
+        type: String
     },
     connections:{
-        type:"string"
-    },
-    mentorFeedback: [
-        {
-          mentorId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-          mentorName: String,
-          comment: String,
-          date: { type: Date, default: Date.now }
-        }
-      ]
-
+        type: String
+    }
 });
 
 module.exports = mongoose.model("user",userSchema);
