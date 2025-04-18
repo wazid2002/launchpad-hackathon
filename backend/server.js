@@ -2,7 +2,7 @@ const express= require("express");
 const connectDB= require("./config/db");
 const dotenv = require("dotenv");
 const sample=require("./routes/testroute");
-const user=require("./routes/user");
+const user=require("./routes/userRoute");
 
 const cors = require("cors")
 
