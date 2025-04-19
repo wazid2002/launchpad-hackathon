@@ -3,6 +3,7 @@ const connectDB= require("./config/db");
 const dotenv = require("dotenv");
 const sample=require("./routes/testroute");
 const user=require("./routes/userRoute");
+const pitch = require("./routes/pitchRoute")
 
 const cors = require("cors")
 
@@ -18,6 +19,7 @@ connectDB();
 
 app.use("/api",sample);
 app.use("/api",user);
+app.use("/api",pitch);
 
 
 

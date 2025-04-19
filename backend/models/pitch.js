@@ -1,4 +1,4 @@
-/*const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const User = require("./user");
 
 const commentSchema = new mongoose.Schema({
@@ -72,17 +72,21 @@ const pitchSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     }],
+    coverImage:{
+        type:String,
+        required:true
+    },
     comments: [commentSchema],
     submittedAt: {
         type: Date,
         default: Date.now()
     },
     mentorFeedback: [{
-        mentorId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+        mentorId:String,
         mentorName: String,
         comment: String,
         date: {type: Date, default: Date.now }
     }]
 })
 
-module.exports = mongoose.model('Pitch', pitchSchema);*/
+module.exports = mongoose.model('Pitch', pitchSchema);
